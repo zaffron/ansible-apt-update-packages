@@ -1,0 +1,7 @@
+---
+apt_upgrade: full
+packages:
+  - ntp
+  - python3-pip
+  - sudo
+  - unzip

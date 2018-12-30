@@ -1,0 +1,22 @@
+galaxy_info:
+  role_name: apt-update-packages
+  author: Avinash Rijal <avinashrijal@gmail.com>
+  description: Update apt packages
+
+  license: MIT
+
+  min_ansible_version: 1.2
+
+  platforms:
+
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+
+  galaxy_tags:
+    - apt
+
+dependencies: []

@@ -1,0 +1,15 @@
+---
+- name: Install required packages
+  become: yes
+  apt:
+    pkg: "{{ item }}"
+    state: latest
+  with_flattened:
+    - ["aptitude"]
+    - "{{ packages }}"
+
+- name: "Do apt {{ apt_upgrade }} upgrade"
+  become: yes
+  apt:
+    update_cache: yes
+    upgrade: "{{ apt_upgrade }}"
