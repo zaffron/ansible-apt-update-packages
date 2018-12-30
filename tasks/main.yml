@@ -3,7 +3,7 @@
   become: yes
   apt:
     name: "{{ query('flattened', [['aptitude'], '{{ packages }}']) }}"
-    state: latest
+    state: present
 
 - name: "Do apt {{ apt_upgrade }} upgrade"
   become: yes
