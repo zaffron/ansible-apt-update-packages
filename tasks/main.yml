@@ -2,11 +2,8 @@
 - name: Install required packages
   become: yes
   apt:
-    pkg: "{{ item }}"
+    name: "{{ query('flattened', [['aptitude'], '{{ packages }}']) }}"
     state: latest
-  with_flattened:
-    - ["aptitude"]
-    - "{{ packages }}"
 
 - name: "Do apt {{ apt_upgrade }} upgrade"
   become: yes
