@@ -2,13 +2,11 @@
 - name: Install required packages
   become: yes
   apt:
-    retries: 3
-    name: "{{ query('flattened', [['aptitude'], '{{ packages }}']) }}"
+    pkg: "{{ packages }}"
     state: present
 
 - name: "Do apt {{ apt_upgrade }} upgrade"
   become: yes
   apt:
-    retries: 1
     update_cache: yes
     upgrade: "{{ apt_upgrade }}"
